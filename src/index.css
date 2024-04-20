@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Madimi One", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  min-height: 100vh;
+  background-color: #35363d;
+  color: #f8f5ee;
+}
+
+.app {
+  width: 85%;
+  margin: 9.6rem auto;
+}
+
+.header-title {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-size: 3.2rem;
+}
+
+.header-description {
+  line-height: 1.5;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.gases {
+  max-width: 60%;
+  margin: 4.8rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 4.8rem;
+  list-style: none;
+}
+
+.gases li {
+  position: relative;
+}
+
+.gas-image {
+  width: 7rem;
+  height: 7rem;
+  mix-blend-mode: screen;
+}
+
+.gas-title {
+  text-align: center;
+  margin: 1.2rem 0;
+  font-size: 1.4rem;
+}
+
+.gas-description {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.gas-details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.gas-symbol.danger {
+  display: inline-block;
+  text-align: center;
+}
+
+.gas-btn:link,
+.gas-btn:visited {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 5px 3rem;
+  border-radius: 100px;
+  text-decoration: none;
+  color: inherit;
+  background-color: #6dc579;
+  color: #35363d;
+  transition: all 0.2s;
+}
+
+.gas-btn:hover {
+  background-color: #54995d;
+}
+
+.gas-danger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 40px;
+  background: #e03131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.gas-danger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #35363d;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.gas-danger::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #e03131;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    width: 100%;
+    padding: 0 1.2rem;
+  }
+}
